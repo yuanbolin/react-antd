@@ -4,11 +4,23 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+import {ConfigProvider} from "antd";
+import zh_CN from "antd/lib/locale/zh_CN";
+import moment from "moment";
+// 时间中文化
+import 'moment/locale/zh-cn';
+
+moment.locale('zh-cn');
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        {/*antd组件的中文化*/}
+        <ConfigProvider locale={zh_CN}>
+            <App/>
+        </ConfigProvider>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
