@@ -5,8 +5,8 @@ import {Layout, Menu, Table, Tag, Space} from 'antd';
 import {AppstoreOutlined, MailOutlined, SettingOutlined} from '@ant-design/icons';
 import {Route, Link, Redirect} from 'react-router-dom'
 import './index.css';
-import AntdTable from '../表格'
-import Lesson from '../作业练习'
+import AntdTable from '../table'
+import Lesson from '../lesson'
 
 const {Header, Footer, Sider, Content} = Layout;
 const {SubMenu} = Menu;
