@@ -16,6 +16,7 @@ class Login extends Component {
 
     //验证成功
     onFinish = values => {
+        //展示loading
         this.setState({
             loading: true
         })
@@ -84,6 +85,7 @@ class Login extends Component {
                                         type='password' placeholder='密 码'/>
                             </FormItem>
                             <FormItem>
+                                {/*button的htmlType一定要是submit才能触发form的onFinish*/}
                                 <Button type='primary' htmlType='submit' className="loginFormButton"
                                         loading={this.state.loading}>
                                     登录
