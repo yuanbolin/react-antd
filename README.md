@@ -35,8 +35,10 @@ yarn add react-router-dom    //项目依赖中加入react-router-dom包
     |       |---login           // 登录
     |       |---lesson          // 作业练习答案
     |       |---table           // table表格
-    |    |---APP.js             // 主路由文件
+    |    |---router             // 路由文件夹
+    |       |---router.js       // 主路由配置文件
     |    |---index.js           // 入口文件
+    |    |---App.css            // 全局样式表
     |--- 其他文件
 ```
 

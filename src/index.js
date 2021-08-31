@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './App.css';
+import Router from './router/router';
 import reportWebVitals from './reportWebVitals';
-
+import './App.css';
 
 import {ConfigProvider} from "antd";
 import zh_CN from "antd/lib/locale/zh_CN";
@@ -17,7 +17,7 @@ ReactDOM.render(
     <React.StrictMode>
         {/*antd组件的中文化*/}
         <ConfigProvider locale={zh_CN}>
-            <App/>
+            <Router/>
         </ConfigProvider>
     </React.StrictMode>,
     document.getElementById('root')
