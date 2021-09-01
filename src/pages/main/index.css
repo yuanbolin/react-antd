@@ -1,0 +1,12 @@
+.containerBox {
+    height: 100vh;
+}
+
+.containerBox .headerBox {
+    background: #7dbcea;
+    color: #fff;
+}
+
+.containerBox .contentBox {
+    padding: 30px;
+}

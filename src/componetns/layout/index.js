@@ -1,17 +1,13 @@
-//layout布局，子路由配置文件
+//layout布局
 
 import React from 'react';
 import {Layout, Menu, Table, Tag, Space} from 'antd';
 import {AppstoreOutlined, MailOutlined, SettingOutlined} from '@ant-design/icons';
-import {Route, Link, Redirect} from 'react-router-dom'
 import './index.css';
-import AntdTable from '../table'
-import Lesson from '../lesson'
-
 const {Header, Footer, Sider, Content} = Layout;
 const {SubMenu} = Menu;
 
-class Home extends React.Component {
+class MyLayout extends React.Component {
     state = {}
 
     //menu跳转
@@ -21,24 +17,22 @@ class Home extends React.Component {
 
 
     render() {
-
-
         return (
             <Layout className={'containerBox'}>
-                <Header className={'HeaderBox'}>React+antd 示例项目</Header>
+                <Header className={'headerBox'}>React+antd 示例项目</Header>
                 <Layout>
                     <Sider theme={'light'} width={256}>
                         {/*侧边导航栏，可切换子路由*/}
                         <Menu
                             onClick={this.handleClick}
                             style={{width: 256}}
-                            defaultSelectedKeys={['/home/table']}
+                            defaultSelectedKeys={['/main/table']}
                             defaultOpenKeys={['sub1']}
                             mode="inline"
                         >
                             <SubMenu key="sub1" icon={<SettingOutlined/>} title="练习">
-                                <Menu.Item key="/home/table">Table表格</Menu.Item>
-                                <Menu.Item key="/home/lesson">作业答案</Menu.Item>
+                                <Menu.Item key="/main/table">Table表格</Menu.Item>
+                                <Menu.Item key="/main/lesson">作业答案</Menu.Item>
                             </SubMenu>
                             <SubMenu key="sub2" icon={<MailOutlined/>} title="Navigation One">
                                 <Menu.ItemGroup key="g1" title="Item 1">
@@ -60,12 +54,8 @@ class Home extends React.Component {
                             </SubMenu>
                         </Menu>
                     </Sider>
-                    <Content className={'ContentBox'}>
-                        {/*配置子路由，初始进来 通过重定向使默认加载/home/table*/}
-                        <Route path='/home' render={() => <Redirect to='/home/table'/>}/>
-                        <Route path='/home/table' component={AntdTable}/>
-                        <Route path='/home/lesson' component={Lesson}/>
-
+                    <Content className={'contentBox'}>
+                        {this.props.children}
                     </Content>
                 </Layout>
                 <Footer style={{textAlign: 'center'}}>Copyright© 2021 若维技术部出品</Footer>
@@ -75,4 +65,4 @@ class Home extends React.Component {
 }
 
 
-export default Home;
+export default MyLayout;

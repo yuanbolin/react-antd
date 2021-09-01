@@ -28,11 +28,12 @@ yarn add react-router-dom    //项目依赖中加入react-router-dom包
     |---public                  // 项目级静态资源
     |---src                     // 项目主文件
     |    |---assets             // 图片、字体等其他静态资源文件
-    |    |---components         // 公共组件
+    |    |---components         // 组件文件夹
+    |       |---layout          // 主界面layout布局
     |    |---utils              // 公共方法
     |    |---pages              // 页面
-    |       |---layout          // 主界面layout布局
     |       |---login           // 登录
+    |       |---main            // 主界面
     |       |---lesson          // 作业练习答案
     |       |---table           // table表格
     |    |---router             // 路由文件夹

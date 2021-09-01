@@ -14,7 +14,7 @@ const themes={
     background: '#222222',
   },
 }
-export default class Index extends Component {
+export default class Lesson extends Component {
   state = {
     value: '',
     type: '',

@@ -1,12 +1,9 @@
 import {Component} from 'react'   //引入必要依赖
-import {Button, Form, Input, Space, Table, Tag} from 'antd'   //按需引入UI组件
-import {UserOutlined, LockOutlined} from '@ant-design/icons';    //按需引入图标
+import {Space, Table, Tag} from 'antd'   //按需引入UI组件
 import './index.css'  //样式表
-import logo from '../../assets/logo.png'   //引入图片
 
-const FormItem = Form.Item  //定义别名，不定义直接用没问题，只是推荐这么用。
 
-class Login extends Component {
+class MyTable extends Component {
     state = {pageNumber: 10}
 
     componentDidMount() {
@@ -78,7 +75,6 @@ class Login extends Component {
         const data = []
         const refer = [
             {
-                id: '1',
                 name: 'John Brown',
                 danhao: 123531564864632,
                 shouzhi: 1,
@@ -87,7 +83,6 @@ class Login extends Component {
                 time: '2021 11:48:12 GMT+0800',
             },
             {
-                id: '2',
                 name: 'Jim Green',
                 danhao: 78941234889443,
                 shouzhi: 1,
@@ -96,7 +91,6 @@ class Login extends Component {
                 time: '2021 13:31:54 GMT+0800',
             },
             {
-                id: '3',
                 name: 'Joe Black',
                 danhao: 3457213125458,
                 shouzhi: 0,
@@ -108,14 +102,15 @@ class Login extends Component {
 
 
         for (let i = 0; i < 30; i++) {
-            data.push(refer[i % 3])
+            data.push({key: 'i' + i, ...refer[i % 3]})
         }
+
         return (
             <Table
                 rowkey={record => record.id}
                 pagination={{
-                    showQuickJumper:true,
-                    showSizeChanger:true,
+                    showQuickJumper: true,
+                    showSizeChanger: true,
                     onChange: (pageNumber) => {
                         console.log('Page: ', pageNumber);
                     }
@@ -125,4 +120,4 @@ class Login extends Component {
     }
 }
 
-export default Login
+export default MyTable

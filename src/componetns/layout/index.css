@@ -2,11 +2,11 @@
     height: 100vh;
 }
 
-.containerBox .HeaderBox {
+.containerBox .headerBox {
     background: #7dbcea;
     color: #fff;
 }
 
-.containerBox .ContentBox {
+.containerBox .contentBox {
     padding: 30px;
 }
