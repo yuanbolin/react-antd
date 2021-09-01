@@ -11,6 +11,7 @@ class MyTable extends Component {
 
 
     render() {
+        // Table里的数据记得要加key值
         const columns = [
             {
                 title: '单号',
@@ -54,7 +55,7 @@ class MyTable extends Component {
                         <Tag
                             color="#2db7f5"
                             onClick={() => {
-                                console.log(tags, params)
+                                console.log('我点击了同意')
                             }}
                         >
                             同意
@@ -62,7 +63,7 @@ class MyTable extends Component {
                         <Tag
                             color="#f50"
                             onClick={() => {
-                                console.log(tags, params)
+                                console.log('我点击了拒绝')
                             }}
                         >
                             拒绝
@@ -72,7 +73,8 @@ class MyTable extends Component {
                 ),
             }
         ];
-        const data = []
+
+        let data = []
         const refer = [
             {
                 name: 'John Brown',
@@ -108,6 +110,7 @@ class MyTable extends Component {
         return (
             <Table
                 rowkey={record => record.id}
+                // 分页器配置  具体api参考分页器组件
                 pagination={{
                     showQuickJumper: true,
                     showSizeChanger: true,

@@ -15,6 +15,7 @@ class Main extends React.Component {
     render() {
         return (
             <MyLayout history={this.props.history}>
+                {/*这里用到了React文档中组合里的包含关系   子组件通过props.children获取*/}
                 {/* 配置子路由，初始进来 通过重定向使默认加载/main/table */}
                 <Route key={'/main'} path='/main' render={() => <Redirect to='/main/table'/>}/>
                 <Route key={'/main/table'} path='/main/table' component={AntdTable}/>
