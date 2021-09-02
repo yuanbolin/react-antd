@@ -21,6 +21,15 @@ export default class Lesson extends Component {
     theme:themes.light,
   }
 
+  componentDidMount() {
+    console.log('组件已经挂载完毕',this.state)
+  }
+
+  componentWillUnmount() {
+    console.log('组件即将卸载')
+  }
+
+
   //点击修改theme
   toggleTheme = () => {
     this.setState(state => ({
@@ -53,6 +62,7 @@ export default class Lesson extends Component {
         <div>点击子元素变色</div>
         <Button onClick={this.toggleTheme}>修改子组件颜色</Button>
         <Welcome theme={this.state.theme}>
+          {/*这里用到了React文档中组合里的包含关系   子组件通过props.children获取*/}
           <div>我是solt插槽</div>
         </Welcome>
         <div>两个输入框均为子组件，要求值互相关联哪一个发生变化另一个会随之变化</div>

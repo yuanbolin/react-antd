@@ -40,6 +40,16 @@ yarn add react-router-dom    //项目依赖中加入react-router-dom包
     |       |---router.js       // 主路由配置文件
     |    |---index.js           // 入口文件
     |    |---App.css            // 全局样式表
+    |--- package.json           // 项目依赖模块包的描述文件
+    |--- README.md              // 项目说明文档
     |--- 其他文件
 ```
 
+##项目示例代码解读
+
+* src/pages下的所有文件是react编程的示例教程
+* 其中router.js和main是react-router-dom的使用教程
+* 其中login和table是antd的使用教程
+* 其中lesson是react章节里作业的答案，是对父子组件传值的教程
+
+``运行项目，查看示例代码学会如何使用react，react-router-dom和antd``

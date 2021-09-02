@@ -1,5 +1,5 @@
 import {Component} from 'react'   //引入必要依赖
-import {Space, Table, Tag} from 'antd'   //按需引入UI组件
+import {Space, Table, Tag, Popconfirm} from 'antd'   //按需引入UI组件
 import './index.css'  //样式表
 
 
@@ -52,22 +52,27 @@ class MyTable extends Component {
                 dataIndex: 'tags',
                 render: (tags, params) => (
                     <Space size="middle">
-                        <Tag
-                            color="#2db7f5"
-                            onClick={() => {
-                                console.log('我点击了同意')
-                            }}
-                        >
-                            同意
-                        </Tag>
-                        <Tag
-                            color="#f50"
-                            onClick={() => {
-                                console.log('我点击了拒绝')
-                            }}
-                        >
-                            拒绝
-                        </Tag>
+                        <Popconfirm placement="topLeft" title="确认要通过这条收支申请?"
+                                    onConfirm={() => {
+                                        console.log('我点击了同意')
+                                    }} okText="确认" cancelText="取消">
+                            <Tag
+                                color="#2db7f5"
+                            >
+                                同意
+                            </Tag>
+                        </Popconfirm>
+                        <Popconfirm placement="topLeft" title="确认要拒绝这条收支申请?"
+                                    onConfirm={() => {
+                                        console.log('我点击了拒绝')
+                                    }} okText="确认" cancelText="取消">
+                            <Tag
+                                color="#f50"
+                            >
+                                拒绝
+                            </Tag>
+                        </Popconfirm>
+
                     </Space>
 
                 ),
