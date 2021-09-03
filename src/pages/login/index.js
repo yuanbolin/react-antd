@@ -9,10 +9,6 @@ const FormItem = Form.Item  //定义别名，不定义直接用没问题，只�
 class Login extends Component {
     state = {loading: false}
 
-    componentDidMount() {
-        //先清理内存
-        this.clearStorage()
-    }
 
     //验证成功
     onFinish = values => {
