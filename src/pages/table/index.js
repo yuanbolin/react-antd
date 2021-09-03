@@ -1,5 +1,5 @@
-import {Component} from 'react'   //引入必要依赖
-import {Space, Table, Tag, Popconfirm} from 'antd'   //按需引入UI组件
+import { Component } from 'react'   //引入必要依赖
+import { Table, Tag, Popconfirm } from 'antd'   //按需引入UI组件
 import './index.css'  //样式表
 
 
@@ -51,7 +51,7 @@ class MyTable extends Component {
                 key: 'tags',
                 dataIndex: 'tags',
                 render: (tags, params) => (
-                    <Space size="middle">
+                    <span>
                         <Popconfirm placement="topLeft" title="确认要通过这条收支申请?"
                                     onConfirm={() => {
                                         console.log('我点击了同意')
@@ -73,7 +73,7 @@ class MyTable extends Component {
                             </Tag>
                         </Popconfirm>
 
-                    </Space>
+                    </span>
 
                 ),
             }
@@ -123,7 +123,9 @@ class MyTable extends Component {
                         console.log('Page: ', pageNumber);
                     }
                 }}
-                columns={columns} dataSource={data}/>
+                columns={columns}
+                dataSource={data}
+            />
         )
     }
 }

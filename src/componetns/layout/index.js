@@ -1,8 +1,7 @@
 //layout布局
 
 import React from 'react';
-import {Layout, Menu, Table, Tag, Space} from 'antd';
-import {AppstoreOutlined, MailOutlined, SettingOutlined} from '@ant-design/icons';
+import {Layout, Menu, Icon} from 'antd';
 import './index.css';
 const {Header, Footer, Sider, Content} = Layout;
 const {SubMenu} = Menu;
@@ -30,12 +29,12 @@ class MyLayout extends React.Component {
                             defaultOpenKeys={['sub1']}
                             mode="inline"
                         >
-                            <SubMenu key="sub1" icon={<SettingOutlined/>} title="练习">
+                            <SubMenu key="sub1" icon={<Icon type='setting' />} title="练习">
                                 <Menu.Item key="/main/table">Table表格</Menu.Item>
                                 <Menu.Item key="/main/props">父子组件传值</Menu.Item>
                                 <Menu.Item key="/main/lesson">作业练习</Menu.Item>
                             </SubMenu>
-                            <SubMenu key="sub2" icon={<MailOutlined/>} title="Navigation One">
+                            <SubMenu key="sub2" icon={<Icon type='mail' />} title="Navigation One">
                                 <Menu.ItemGroup key="g1" title="Item 1">
                                     <Menu.Item key="1">Option 1</Menu.Item>
                                     <Menu.Item key="2">Option 2</Menu.Item>
@@ -45,7 +44,7 @@ class MyLayout extends React.Component {
                                     <Menu.Item key="4">Option 4</Menu.Item>
                                 </Menu.ItemGroup>
                             </SubMenu>
-                            <SubMenu key="sub3" icon={<AppstoreOutlined/>} title="Navigation Two">
+                            <SubMenu key="sub3" icon={<Icon type='appstore' />} title="Navigation Two">
                                 <Menu.Item key="5">Option 5</Menu.Item>
                                 <Menu.Item key="6">Option 6</Menu.Item>
                                 <SubMenu key="sub4" title="Submenu">

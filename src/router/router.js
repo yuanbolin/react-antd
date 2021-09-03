@@ -11,8 +11,8 @@ export default class Router extends Component {
     render() {
         return (
             <BrowserRouter>
-                <Route exact path='/' component={Login}></Route>
-                <Route path="/main" component={Main}></Route>
+                <Route exact path='/' component={Login} />
+                <Route path="/main" component={Main} />
             </BrowserRouter>
         )
     }

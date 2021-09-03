@@ -1,9 +1,7 @@
 //父子组件传值教程
-import {Component} from 'react'   //引入必要依赖
+import { Component } from 'react'   //引入必要依赖
 import './index.css'
-import {Button} from "antd";
-import {MinusCircleOutlined, PlusCircleOutlined} from "@ant-design/icons";  //样式表
-
+import { Button,Icon } from "antd";
 
 class MyProps extends Component {
     constructor(props) {
@@ -19,11 +17,11 @@ class MyProps extends Component {
         const {num} = this.props
         return (
             <>
-                <Button icon={<PlusCircleOutlined/>} type="danger"  onClick={()=>this.handleChange('plus')}/>
+                <Button icon={<Icon type="plus-circle" />} type="danger"  onClick={()=>this.handleChange('plus')}/>
                 <div className="myprops_content">
                     当前是：{num}
                 </div>
-                <Button icon={<MinusCircleOutlined/>} type="primary"  onClick={()=>this.handleChange('minus')}/>
+                <Button icon={<Icon type="minus-circle" />} type="primary"  onClick={()=>this.handleChange('minus')}/>
             </>
         )
     }
