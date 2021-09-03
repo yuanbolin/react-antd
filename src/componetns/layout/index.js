@@ -32,7 +32,8 @@ class MyLayout extends React.Component {
                         >
                             <SubMenu key="sub1" icon={<SettingOutlined/>} title="练习">
                                 <Menu.Item key="/main/table">Table表格</Menu.Item>
-                                <Menu.Item key="/main/lesson">作业答案</Menu.Item>
+                                <Menu.Item key="/main/props">父子组件传值</Menu.Item>
+                                <Menu.Item key="/main/lesson">作业练习</Menu.Item>
                             </SubMenu>
                             <SubMenu key="sub2" icon={<MailOutlined/>} title="Navigation One">
                                 <Menu.ItemGroup key="g1" title="Item 1">

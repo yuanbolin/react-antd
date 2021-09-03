@@ -6,6 +6,7 @@ import MyLayout from '../../componetns/layout'
 import './index.css';
 import AntdTable from '../table'
 import Lesson from '../lesson'
+import MyProps from '../props'
 
 
 class Main extends React.Component {
@@ -20,6 +21,7 @@ class Main extends React.Component {
                 <Route key={'/main'} path='/main' render={() => <Redirect to='/main/table'/>}/>
                 <Route key={'/main/table'} path='/main/table' component={AntdTable}/>
                 <Route key={'/main/lesson'} path='/main/lesson' component={Lesson}/>
+                <Route key={'/main/props'} path='/main/props' component={MyProps}/>
             </MyLayout>
         )
     }
