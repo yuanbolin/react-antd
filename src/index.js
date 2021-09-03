@@ -5,7 +5,7 @@ import Router from './router/router';
 import reportWebVitals from './reportWebVitals';
 import './App.css';
 
-import {ConfigProvider} from "antd";
+import { ConfigProvider } from 'antd';
 import zh_CN from "antd/lib/locale/zh_CN";
 import moment from "moment";
 // 时间中文化

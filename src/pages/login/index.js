@@ -1,4 +1,4 @@
-import {Component} from 'react'   //引入必要依赖
+import React,{Component} from 'react'   //引入必要依赖
 import {Button, Form, Input, Icon} from 'antd'   //按需引入UI组件
 import './index.css'  //样式表
 import logo from '../../assets/logo.png'   //引入图片
@@ -10,35 +10,39 @@ class Login extends Component {
 
 
     //验证成功
-    onFinish = values => {
-        //展示loading
-        this.setState({
-            loading: true
-        })
-        //要传的数据
-        let newParams = {
-            username: values.username && values.username.replace(/^\s+|\s+$/g, ''), // 去除首尾空格
-            password: values.password
-        }
+    onFinish = (e) => {
+        e.preventDefault() // 这里添加了一个阻止默认事件
+        this.props.form.validateFields((err, values) => {
+            if (err) return
+            //展示loading
+            this.setState({
+                loading: true
+            })
+            //要传的数据
+            let newParams = {
+                username: values.username && values.username.replace(/^\s+|\s+$/g, ''), // 去除首尾空格
+                password: values.password
+            }
 
-        console.log('正在发送参数给后台..', JSON.stringify(newParams))
-        //模拟1000延迟登录接口效果
-        setTimeout(() => {
-            console.log('正在存储接口返回信息..')
-            sessionStorage.setItem('token', 'token_test')
-            sessionStorage.setItem('name', '游客')
-            sessionStorage.setItem('id', '123456')
-            sessionStorage.setItem('touxiang', '')
-            sessionStorage.setItem('roleName', '游客访问')
-            this.setState(
-                {
-                    loading: false
-                },
-                () => {
-                    this.props.history.push("/main");
-                }
-            )
-        }, 1000)
+            console.log('正在发送参数给后台..', JSON.stringify(newParams))
+            //模拟1000延迟登录接口效果
+            setTimeout(() => {
+                console.log('正在存储接口返回信息..')
+                sessionStorage.setItem('token', 'token_test')
+                sessionStorage.setItem('name', '游客')
+                sessionStorage.setItem('id', '123456')
+                sessionStorage.setItem('touxiang', '')
+                sessionStorage.setItem('roleName', '游客访问')
+                this.setState(
+                    {
+                        loading: false
+                    },
+                    () => {
+                        this.props.history.push("/main");
+                    }
+                )
+            }, 1000)
+        })
     }
 
     //清空sessionStorage缓存
@@ -63,8 +67,7 @@ class Login extends Component {
                 <div className="loginBox">
                     <div className="content">
                         <img src={logo} alt='图标' style={{height: '70px', margin: `0 auto 47px`}}/>
-                        <Form onFinish={this.onFinish}
-                              onFinishFailed={this.onFinishFailed} className='login-form'>
+                        <Form onSubmit={this.onFinish} className='login-form'>
                             <FormItem
                                 // label="Username"
                                 name="username"
@@ -77,7 +80,7 @@ class Login extends Component {
                                 name="password"
                                 rules={[{required: true, message: '请输入密码'}]}>
                                 <Input prefix={<Icon type='lock' style={{color: 'rgba(0,0,0,.25)'}}/>}
-                                        type='password' placeholder='密 码'/>
+                                       type='password' placeholder='密 码'/>
                             </FormItem>
                             <FormItem>
                                 {/*button的htmlType一定要是submit才能触发form的onFinish*/}

@@ -1,5 +1,5 @@
 //父子组件传值教程
-import {Component} from 'react'   //引入必要依赖
+import React, {Component} from 'react'   //引入必要依赖
 
 import Content from './components'
 import './index.css'  //样式表
@@ -12,19 +12,17 @@ class MyProps extends Component {
 
 
     changeNum = (type) => {
-        if (type == 'minus') {
+        if (type === 'minus') {
             this.setState(state => {
-                if (state.num == 0) return
-                state.num--
+                if (state.num === 0) return
                 return {
-                    num: state.num
+                    num: state.num - 1
                 }
             })
-        } else if (type == 'plus') {
+        } else if (type === 'plus') {
             this.setState(state => {
-                state.num++
                 return {
-                    num: state.num
+                    num: state.num + 1
                 }
             })
         }

@@ -1,4 +1,4 @@
-import { Component } from 'react'   //引入必要依赖
+import React,{ Component } from 'react'   //引入必要依赖
 import { Table, Tag, Popconfirm } from 'antd'   //按需引入UI组件
 import './index.css'  //样式表
 
